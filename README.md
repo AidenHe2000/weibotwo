@@ -54,6 +54,17 @@
 
 ![主面板](./docs/UI_illustration/main_activity.png "主面板")
 
+- 用户主页
+
+![用户主页](./docs/UI_illustration/user_profile.png "用户主页")
+
+- 搜索和热搜
+
+![搜索和热搜](./docs/UI_illustration/search.png "搜索和热搜")
+
+- 设置
+
+![设置](./docs/UI_illustration/settings.png "设置")
 
 ---
 
