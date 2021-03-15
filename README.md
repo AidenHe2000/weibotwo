@@ -3,22 +3,24 @@
 > weibo2为提高所有人的微博体验而生
 
 ---
+
 ## 小组信息
 
 组名：<u>小组一</u>
 
-成员：
+成员(分工非最终结果)：
 
-| Name | ID   | Role | Concrete Tasks |
-| :--: | :--: | :--: | :------------: |
-|   何启凡   |   10184304123   |   Leader   |        Writing Readme       |
-| 孟庆奥森 | 10195101544 | Designer | Designing interface |
-| 詹鹏飞 | 10195101459 | Documentation | Writing documentations |
-| 赵梓涵 | 10195101562 | Developer |  |
-| 徐涛 | 10195101532 | Developer |  |
-| 唐瑞奇 | 10181900241 | Developer |  |
+| Name | ID   | github profile | Role | Concrete Tasks |
+| :--- | :--- | :--- | :------------- | :--- |
+|   何启凡   |   10184304123   |   <https://github.com/AidenHe2000>   |  Leader       | Writing Readme |
+| 孟庆奥森 | 10195101544 | <https://github.com/OrsonM> | Designer | Designing interface |
+| 詹鹏飞 | 10195101459 | <https://github.com/feiilla> | Documentation | Writing documentations |
+| 赵梓涵 | 10195101562 | <https://github.com/zzh-perfect> | Developer |  |
+| 徐涛 | 10195101532 | <https://github.com/Uesugieri1> | Developer |  |
+| 唐瑞奇 | 10181900241 | <https://github.com/TrevanTang> | Developer |  |
 
 ---
+
 ## 简介
 
 > 天下苦微博久矣
@@ -48,6 +50,7 @@
   > 13. 私信功能模块完全关闭
 
 ---
+
 ## 用户界面 (非最终结果)
 
 - 主面板 
