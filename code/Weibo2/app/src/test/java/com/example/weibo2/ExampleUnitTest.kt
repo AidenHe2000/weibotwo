@@ -1,4 +1,4 @@
-package com.practice.weibo2
+package com.example.weibo2
 
 import org.junit.Test
 
