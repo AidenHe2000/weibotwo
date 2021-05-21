@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>trityp.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JUnit4ForLab$tritypTest.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">trityp.java</span></div><h1>trityp.java</h1><pre class="source lang-java linenums">import java.io.*;
+
+<span class="fc" id="L3">class trityp {</span>
+<span class="fc" id="L4">    private static String[] triTypes = {&quot;&quot;, // Ignore 0.</span>
+            &quot;scalene&quot;, &quot;isosceles&quot;, &quot;equilateral&quot;,
+            &quot;not a valid triangle&quot;};
+<span class="fc" id="L7">    private static String instructions = &quot;This is the ancient &quot; +</span>
+            &quot;TriTyp program.\nEnter three integers that represent the &quot; +
+            &quot;lengths of the sides of a triangle.\nThe triangle will be &quot; +
+            &quot;categorized as either scalene, isosceles, equilateral\n&quot; +
+            &quot;or invalid.\n&quot;;
+
+    public static void main(String[] argv) {  // Driver program for trityp
+        int A, B, C;
+        int T;
+
+//   if (argv.length == 3) {
+//      A = Integer.parseInt(argv[0]);
+//      B = Integer.parseInt(argv[1]);
+//      C = Integer.parseInt(argv[2]);
+//   } else {
+<span class="nc" id="L22">        System.out.println(instructions);</span>
+<span class="nc" id="L23">        System.out.println(&quot;Enter side 1: &quot;);</span>
+<span class="nc" id="L24">        A = getN();</span>
+<span class="nc" id="L25">        System.out.println(&quot;Enter side 2: &quot;);</span>
+<span class="nc" id="L26">        B = getN();</span>
+<span class="nc" id="L27">        System.out.println(&quot;Enter side 3: &quot;);</span>
+<span class="nc" id="L28">        C = getN();</span>
+<span class="nc" id="L29">        T = Triang(A, B, C);</span>
+//   }
+
+<span class="nc" id="L32">        System.out.println(&quot;Result is: &quot; + triTypes[T]);</span>
+<span class="nc" id="L33">    }</span>
+
+    // ====================================
+// The main triangle classification method
+    static int Triang(int Side1, int Side2, int Side3) {
+        int triOut;
+
+        // triOut is output from the routine:
+        //    Triang = 1 if triangle is scalene
+        //    Triang = 2 if triangle is isosceles
+        //    Triang = 3 if triangle is equilateral
+        //    Triang = 4 if not a triangle
+
+        // After a quick confirmation that it's a legal
+        // triangle, detect any sides of equal length
+<span class="fc bfc" id="L48" title="All 6 branches covered.">        if (Side1 &lt;= 0 || Side2 &lt;= 0 || Side3 &lt;= 0) {</span>
+<span class="fc" id="L49">            triOut = 4;</span>
+<span class="fc" id="L50">            return (triOut);</span>
+        }
+
+<span class="fc" id="L53">        triOut = 0;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (Side1 == Side2)</span>
+<span class="fc" id="L55">            triOut = triOut + 1;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (Side1 == Side3)</span>
+<span class="fc" id="L57">            triOut = triOut + 2;</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (Side2 == Side3)</span>
+<span class="fc" id="L59">            triOut = triOut + 3;</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (triOut == 0) {  // Confirm it's a legal triangle before declaring</span>
+            // it to be scalene
+
+<span class="fc bfc" id="L63" title="All 6 branches covered.">            if (Side1 + Side2 &lt;= Side3 || Side2 + Side3 &lt;= Side1 ||</span>
+                    Side1 + Side3 &lt;= Side2)
+<span class="fc" id="L65">                triOut = 4;</span>
+            else
+<span class="fc" id="L67">                triOut = 1;</span>
+<span class="fc" id="L68">            return (triOut);</span>
+        }
+
+        /* Confirm it's a legal triangle before declaring  */
+        /* it to be isosceles or equilateral  */
+
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (triOut &gt; 3)</span>
+<span class="fc" id="L75">            triOut = 3;</span>
+<span class="fc bfc" id="L76" title="All 4 branches covered.">        else if (triOut == 1 &amp;&amp; Side1 + Side2 &gt; Side3)</span>
+<span class="fc" id="L77">            triOut = 2;</span>
+<span class="fc bfc" id="L78" title="All 4 branches covered.">        else if (triOut == 2 &amp;&amp; Side1 + Side3 &gt; Side2)</span>
+<span class="fc" id="L79">            triOut = 2;</span>
+<span class="fc bfc" id="L80" title="All 4 branches covered.">        else if (triOut == 3 &amp;&amp; Side2 + Side3 &gt; Side1)</span>
+<span class="fc" id="L81">            triOut = 2;</span>
+        else
+<span class="fc" id="L83">            triOut = 4;</span>
+<span class="fc" id="L84">        return (triOut);</span>
+    } // end Triang
+
+    // ====================================
+// Read (or choose) an integer
+    private static int getN() {
+<span class="nc" id="L90">        int inputInt = 1;</span>
+<span class="nc" id="L91">        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));</span>
+        String inStr;
+
+        try {
+<span class="nc" id="L95">            inStr = in.readLine();</span>
+<span class="nc" id="L96">            inputInt = Integer.parseInt(inStr);</span>
+<span class="nc" id="L97">        } catch (IOException e) {  // JDK requires the IOException to be caught.</span>
+<span class="nc" id="L98">            System.out.println(&quot;Could not read input, choosing 1.&quot;);</span>
+<span class="nc" id="L99">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L100">            System.out.println(&quot;Entry must be a number, choosing 1.&quot;);</span>
+<span class="nc" id="L101">        }</span>
+
+<span class="nc" id="L103">        return (inputInt);</span>
+    } // end getN
+
+} // end trityp class
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
