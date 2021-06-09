@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         if (accessToken == null) {
             Log.d(TAG, "not login in yet")
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-        } else Log.d(TAG, "already login in")
+        } /*else Log.d(TAG, "already login in")*/
+        else startActivity(Intent(this@MainActivity, WeiboStreamActivity::class.java))
 
     }
 

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Weibo2">
         <activity
+            android:name=".WeiboStreamActivity"
+            android:label="广场"/>
+        <activity
             android:name=".LoginActivity"
             android:label="登录" />
         <activity android:name=".MainActivity">
