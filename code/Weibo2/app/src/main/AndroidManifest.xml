@@ -13,17 +13,16 @@
         android:theme="@style/Theme.Weibo2">
         <activity
             android:name=".WeiboStreamActivity"
-            android:label="广场"/>
-        <activity
-            android:name=".LoginActivity"
-            android:label="登录" />
-        <activity android:name=".MainActivity">
+            android:label="广场">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="登录" />
     </application>
 
 </manifest>

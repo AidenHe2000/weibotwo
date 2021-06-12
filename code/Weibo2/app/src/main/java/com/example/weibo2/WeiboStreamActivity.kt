@@ -1,6 +1,10 @@
 package com.example.weibo2
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +29,15 @@ class WeiboStreamActivity : AppCompatActivity() {
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        // 判断是否已经登陆
+        val loginSharedPreferences: SharedPreferences =
+            getSharedPreferences("AccessToken", Context.MODE_PRIVATE)
+        // 获取accessToken
+        val accessToken: String? = loginSharedPreferences.getString("access_token", null)
+        if (accessToken == null) {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
 
         val recyclerView:RecyclerView = findViewById(R.id.recyclerView)
 

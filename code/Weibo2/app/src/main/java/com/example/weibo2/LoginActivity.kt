@@ -19,9 +19,9 @@ import retrofit2.Response
 
 private const val TAG = "LoginActivity"
 
-const val AppKey = "3617242880"
-const val AppSecret = "17281b15cf0683046563bc92262ea662"
-const val RedirectUri = "https://api.weibo.com/oauth2/default.html"
+private const val AppKey = "3617242880"
+private const val AppSecret = "17281b15cf0683046563bc92262ea662"
+private const val RedirectUri = "https://api.weibo.com/oauth2/default.html"
 
 class LoginActivity : AppCompatActivity() {
 
@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
                     putString("uid", accessToken.uid)
                     apply()
                 }
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                startActivity(Intent(this@LoginActivity, WeiboStreamActivity::class.java))
             }
 
             override fun onFailure(call: Call<AccessToken>, t: Throwable) {
