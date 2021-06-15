@@ -236,6 +236,7 @@ override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
 #### 最终效果
 
-~~~python
-python app.py
+~~~
+![演示1](./WeiboListPic/1.png)
+![演示2](./WeiboListPic/2.png)
 ~~~
